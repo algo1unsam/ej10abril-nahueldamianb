@@ -5,7 +5,7 @@ import legion.*
 
 test "La tolerancia disminuye en 1 al ser asustado" {
 	mirca.serAsustadoPor(macaria)
-	assert.equals(21,mirca.tolerancia())
+	assert.equals(20,mirca.tolerancia())
 }
 
 test "La tolerancia disminuye incluso si el mismo ninio lo asusta muchas veces" {
@@ -13,7 +13,7 @@ test "La tolerancia disminuye incluso si el mismo ninio lo asusta muchas veces" 
 	mirca.serAsustadoPor(pedro)
 	mirca.serAsustadoPor(pedro)
 	mirca.serAsustadoPor(pedro)
-	assert.equals(18,mirca.tolerancia())
+	assert.equals(17,mirca.tolerancia())
 }
 
 test "El adulto no le entrega caramelos a macaria" {
@@ -21,19 +21,19 @@ test "El adulto no le entrega caramelos a macaria" {
 }
 
 test "La cantidad de caramelos entregada se ve afectada por los elementos del chico" {
-	macaria.disfrazar(mascaraFrankenstein)
-	assert.equals(10,mirca.caramelosAEntregar(macaria))
+	macaria.agregarDisfraz(mascaraFrankenstein)
+	assert.equals(11,mirca.caramelosAEntregar(macaria))
 }
 
 test "Los caramelos efectivamente se entregan" {
-	macaria.disfrazar(mascaraFrankenstein)
+	macaria.agregarDisfraz(mascaraFrankenstein)
 	mirca.serAsustadoPor(macaria)
-	assert.equals(7,macaria.caramelos())
+	assert.equals(8.25,macaria.caramelos())
 }
 
 test "Mirca es asustado por la legion del terror y da 21 caramelos" {
-	macaria.disfrazar(mascaraFrankenstein)
-	macaria.disfrazar(barba)
+	macaria.agregarDisfraz(mascaraFrankenstein)
+	macaria.agregarDisfraz(barba)
 	legionDelTerror.agregarIntegrantes([macaria,pancracio])
 	mirca.serAsustadoPor(legionDelTerror)
 	assert.equals(21,legionDelTerror.caramelos())
