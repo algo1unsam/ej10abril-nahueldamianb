@@ -36,5 +36,5 @@ test "Mirca es asustado por la legion del terror y da 21 caramelos" {
 	macaria.agregarDisfraz(barba)
 	legionDelTerror.agregarIntegrantes([macaria,pancracio])
 	mirca.serAsustadoPor(legionDelTerror)
-	assert.equals(21,legionDelTerror.caramelos())
+	assert.equals(19.5,legionDelTerror.caramelos())
 }

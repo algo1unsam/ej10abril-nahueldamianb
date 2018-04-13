@@ -5,6 +5,10 @@ object macaria {
 	var disfraces = [ ]
 	var caramelos = 0
 	
+	method disfraces() {
+		return disfraces
+	}
+	
 	method hacerEnojar() {
 		nivelIra += 1
 	}
@@ -15,6 +19,10 @@ object macaria {
 	
 	method sacarDisfraz(disfraz) {
 		disfraces.remove(disfraz)
+	}
+	
+	method dejarDeUsarMenosEfectivo() {
+		disfraces.remove(disfraces.min({ disfraz => disfraz.nivelSusto() }))
 	}
 
 	method capacidadSusto() {
@@ -28,8 +36,6 @@ object macaria {
 	method caramelos() {
 		return caramelos
 	}
-
-
 }
 
 object pancracio {
@@ -37,7 +43,10 @@ object pancracio {
 	var disfraces = [ mascaraDracula ]
 	var caramelos = 0
 	
-
+	method disfraces() {
+		return disfraces
+	}
+	
 	method agregarDisfraz(nuevoDisfraz) {
 		disfraces.removeAll(disfraces)
 		disfraces.add(nuevoDisfraz)
@@ -66,13 +75,20 @@ object pedro {
 	var disfraces = [ mascaraDracula ]
 	var caramelos = 0
 	
-
+	method disfraces() {
+		return disfraces
+	}
+	
 	method agregarDisfraz(nuevoDisfraz) {
 		disfraces.add(nuevoDisfraz)
 	}
 	
 	method sacarDisfraz(disfraz) {
 		disfraces.remove(disfraz)
+	}
+	
+	method tirarTodosLosDisfraces (){
+        disfraces.removeAll(disfraces)
 	}
 	
 	method capacidadSusto() {
