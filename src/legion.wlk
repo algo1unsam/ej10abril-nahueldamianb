@@ -28,7 +28,7 @@ object legionDelTerror {
 }
 
 object barrio {
-	var integrantes = [ ]
+	var property integrantes = []
 	
 	method agregarIntegrantes(nuevosIntegrantes) {
 		integrantes.addAll(nuevosIntegrantes)
@@ -54,4 +54,11 @@ object barrio {
 		return integrantes.filter({ integrante => integrante.capacidadSusto() >= 42 })
 	}
 
+     method chicosConMasCaramelos(cantidad)
+     {
+     	return integrantes.sortedBy({a, b => a.caramelos() > b.caramelos()})
+     				.subList(0, 1)
+     				.asSet()
+     				.asList()
+     }
 }

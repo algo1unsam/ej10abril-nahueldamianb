@@ -46,3 +46,37 @@ test "La cantidad de caramelos recibida es correcta" {
 	mirca.serAsustadoPor(legionDelTerror)
 	assert.equals(16,legionDelTerror.caramelos())
 }
+
+test "Los 2 con mas caramelos" {
+	pancracio.caramelosAEntregar(10)
+	macaria.caramelosAEntregar(10)
+	pedro.caramelosAEntregar(10)
+	barrio.integrantes( [pedro,macaria,pancracio])
+	assert.equals([pedro, pancracio],barrio.chicosConMasCaramelos(2))
+}
+/*
+test "Ninguno muy asustador" {
+	pedro.caramelosAEntregar(10)
+	barrio.integrantes( [pedro,macaria,pancracio,pancracio,pedro,macaria,pedro])
+	assert.notThat(barrio.algunoMuyAsustador())
+}
+
+test "Norma sin repetidos" {
+	macaria.agregarDisfraz(barba)
+	pedro.agregarDisfraz(mascaraDracula)
+	pedro.agregarDisfraz(mascaraFrankenstein)
+	pedro.agregarDisfraz(barba)
+	legionDelTerror.agregarIntegrantes([pedro,macaria,pancracio])
+	legionDelTerror.normaSinRepetidos()
+	assert.notThat(legionDelTerror.disfracesRepetidos().contains(barba))
+}
+
+test "Norma sin repetidos no hace nada si un chico tiene muchas veces el mismo elemento" {
+	pancracio.agregarDisfraz(barba)
+	pancracio.agregarDisfraz(barba)
+	pedro.agregarDisfraz(mascaraDracula)
+	pedro.agregarDisfraz(mascaraFrankenstein)
+	legionDelTerror.agregarIntegrantes([pedro,macaria,pancracio])
+	legionDelTerror.normaSinRepetidos()
+	assert.that(legionDelTerror.todosLosDisfraces().contains(barba))
+}*/
